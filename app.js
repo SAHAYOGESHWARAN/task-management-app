@@ -8,10 +8,9 @@ connectDB();
 
 app.use(bodyParser.json());
 
-app.use('/tasks', require('./routes/tasks'));
+// Routes
 app.use('/auth', require('./routes/auth'));
-
+app.use('/tasks', require('./routes/tasks'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
