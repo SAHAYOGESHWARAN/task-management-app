@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/auth', require('./routes/auth'));
+
 app.use('/tasks', require('./routes/tasks'));
 
 const PORT = process.env.PORT || 5000;
