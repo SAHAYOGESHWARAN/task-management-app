@@ -42,23 +42,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// @route   POST /tasks
-// @desc    Create a new task
-// @access  Private
-router.post('/', async (req, res) => {
-    const task = new Task({
-      title: req.body.title,
-      description: req.body.description,
-      completed: req.body.completed,
-      user: req.user.id, // Assign task to the authenticated user
-    });
-  
-    try {
-      const newTask = await task.save();
-      res.status(201).json(newTask);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
-    }
-  });
-  
 module.exports = router;
